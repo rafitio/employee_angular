@@ -1,0 +1,32 @@
+<div class="container custom-container">
+    <div class="col-md-12">
+      <h3 class="mb-3 text-center">Create Employee</h3>
+  
+      <div class="form-group">
+        <input type="text" [(ngModel)]="employeeDetails.nik" class="form-control" placeholder="NIK" disabled>
+      </div>
+
+      <div class="form-group">
+        <input type="text" [(ngModel)]="employeeDetails.name" class="form-control" placeholder="Name">
+      </div>
+  
+      <div class="form-group">
+        <select [(ngModel)]="employeeDetails.position_id" class="form-control" >
+          <option value="default">Select Position</option>
+          <option *ngFor="let position of positions" [value]="position.id">{{position.name}}</option>
+      </select>
+      </div>
+  
+      <div class="form-group">
+        <select [(ngModel)]="employeeDetails.divisions_id" class="form-control" >
+          <option value="default">Select Division</option>
+          <option *ngFor="let division of divisions" [value]="division.id">{{division.name}}</option>
+      </select>
+      </div>
+  
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="addEmployee()">Create Employee</button>
+      </div>
+  
+    </div>
+  </div>
